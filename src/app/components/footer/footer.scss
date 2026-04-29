@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+.footer {
+  background: $color-primary;
+  padding-block: 20px;
+  color: $color-text;
+  font-size: 0.9rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__github-link {
+    color: $color-secondary;
+    transition: color $duration ease;
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+    }
+  }
+}
