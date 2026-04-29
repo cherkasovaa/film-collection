@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +14,7 @@ body {
     Verdana,
     sans-serif;
   font-size: 16px;
-  background: #f4f4f4;
+  background: $color-tertiary;
 }
 
 .container {

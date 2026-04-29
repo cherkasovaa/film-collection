@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header__container container">
+    <a class="header__title" routerLink="/">{{ title }}</a>
+
+    <nav class="header__navigation navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a
+            [routerLink]="['/']"
+            routerLinkActive="navigation__link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            class="navigation__link"
+            >Home</a
+          >
+        </li>
+        <li class="navigation__item">
+          <a
+            [routerLink]="['/about']"
+            routerLinkActive="navigation__link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            class="navigation__link"
+            >About</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

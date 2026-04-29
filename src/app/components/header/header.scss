@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+.header {
+  background: $color-primary;
+
+  &__container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-block: 20px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-text;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: $color-text;
+    transition: color 0.3s ease;
+
+    &--active,
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
