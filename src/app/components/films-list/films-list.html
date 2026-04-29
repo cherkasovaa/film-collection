@@ -1,0 +1,11 @@
+<section class="films-section">
+  <div class="container">
+    <div class="film-list">
+      @for (film of filmsService.films(); track film.id) {
+        <app-film-card [film]="film"></app-film-card>
+      } @empty {
+        <p>Nothing found</p>
+      }
+    </div>
+  </div>
+</section>
