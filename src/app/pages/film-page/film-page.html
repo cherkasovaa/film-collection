@@ -1,0 +1,31 @@
+<div class="film-details">
+  <div class="film-details__container container">
+    @if (film(); as film) {
+      <button routerLink="/" class="button">← Back to Collection</button>
+
+      <div class="film-details__content">
+        <img [src]="film.posterUrl" [alt]="film.title" class="film-details__poster" />
+
+        <div class="film-details__info">
+          <h2 class="film-details__title">{{ film.title }}</h2>
+          <p class="film-details__year"><strong>Year:</strong> {{ film.year }}</p>
+          <p class="film-details__genre"><strong>Genre:</strong> {{ film.genre }}</p>
+          <p class="film-details__rating"><strong>Rating:</strong> {{ film.rating }}/10</p>
+
+          <p class="film-details__duration">
+            <strong>Duration:</strong> {{ film.duration | durationPipe }}
+          </p>
+
+          <p class="film-details__description">
+            <strong>Description:</strong> {{ film.description }}
+          </p>
+        </div>
+      </div>
+    } @else {
+      <div class="film-details__not-found">
+        <p class="film-details__not-found-text">Film not found!</p>
+        <button routerLink="/" class="button">← Go Home</button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.film-details {
+  padding-block: 20px;
+  position: relative;
+
+  &__content {
+    display: flex;
+    gap: 15px;
+    padding-top: 20px;
+  }
+
+  &__poster {
+    border-radius: 12px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  & &__container &__not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+  }
+
+  &__not-found-text {
+    font-size: 1.5rem;
+  }
+}
