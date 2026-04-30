@@ -1,8 +1,9 @@
-<app-header [companyName]="companyName()"></app-header>
-
-<main class="main">
-  <app-films-list></app-films-list>
-  <router-outlet />
-</main>
-
-<app-footer [companyName]="companyName()"></app-footer>
+<div class="root">
+  <app-header [companyName]="companyName()"></app-header>
+  
+  <main class="main">
+    <router-outlet />
+  </main>
+  
+  <app-footer [companyName]="companyName()"></app-footer>
+</div>
