@@ -34,7 +34,7 @@ a {
   background: $color-accent;
   color: $color-text;
   font-size: 0.8rem;
-  border-radius: 4px;
+  border-radius: $border-radius-sm;
   border: none;
   transition: background $duration;
   cursor: pointer;
