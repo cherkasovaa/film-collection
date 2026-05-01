@@ -8,18 +8,15 @@
 }
 
 body {
-  font-family:
-    Graphik Kinopoisk LC Web,
-    Tahoma,
-    Arial,
-    Verdana,
-    sans-serif;
+  font-family: $font-primary;
   font-size: 16px;
+  color: $color-text;
   background: $color-tertiary;
 }
 
 a {
   text-decoration: none;
+  color: $color-secondary;
 }
 
 .container {
@@ -34,7 +31,7 @@ a {
   align-items: center;
   gap: 5px;
   padding: 8px 12px;
-  background: $color-primary;
+  background: $color-accent;
   color: $color-text;
   font-size: 0.8rem;
   border-radius: 4px;
@@ -43,6 +40,6 @@ a {
   cursor: pointer;
 
   &:hover {
-    background: color.adjust($color-primary, $lightness: -10%);
+    background: color.adjust($color-accent, $lightness: -10%);
   }
 }

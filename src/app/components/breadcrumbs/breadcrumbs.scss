@@ -3,7 +3,7 @@
 
 .breadcrumbs {
   font-size: 0.8em;
-  padding-block: 10px;
+  padding-block: 20px;
 
   &__list {
     list-style: none;
@@ -17,15 +17,15 @@
   }
 
   &__link {
-    color: color.adjust($color-primary, $lightness: -10%);
+    color: $color-accent;
     font-weight: 500;
 
     &:hover {
-      color: $color-text-dark;
+      color: $color-secondary;
     }
 
     &:not(&--clickable) {
-      color: $color-primary;
+      color: $color-secondary;
       font-weight: 700;
       cursor: default;
     }
@@ -33,6 +33,6 @@
 
   &__separator {
     padding-inline: 8px;
-    color: $color-secondary;
+    color: color.adjust($color-secondary, $lightness: -20%);
   }
 }

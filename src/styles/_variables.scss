@@ -1,9 +1,11 @@
+@use 'sass:color';
 // Colors
-$color-primary: blue;
-$color-secondary: red;
-$color-tertiary: #f4f4f4;
-$color-text: white;
-$color-text-dark: #515151;
+$color-primary: #0c1323;
+$color-secondary: #9db2ff;
+$color-tertiary: #111a2b;
+$color-text: #ecf2ff;
+$color-text-dark: #bccbe3;
+$color-accent: color.adjust($color-secondary, $lightness: -10%);
 
 // Fonts
 $font-primary: Tahoma, Arial, Verdana, sans-serif;

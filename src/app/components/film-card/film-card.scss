@@ -1,14 +1,15 @@
 @use 'variables' as *;
+@use 'sass:color';
 
 .film-card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: $color-tertiary;
+  background: color.adjust($color-tertiary, $lightness: 10%);
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  min-width: 288px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  min-width: 300px;
   overflow: hidden;
 
   &__rating {
@@ -16,7 +17,7 @@
     top: 8px;
     left: 8px;
     padding: 3px 8px;
-    background: $color-tertiary;
+    background: $color-accent;
     color: $color-text-dark;
     font-size: 0.8rem;
     min-width: 32px;
@@ -35,11 +36,11 @@
 
     &-icon {
       fill: transparent;
-      stroke: $color-text-dark;
+      stroke: $color-secondary;
 
       &--is-favorite {
-        fill: $color-secondary;
-        stroke: $color-secondary;
+        fill: $color-accent;
+        stroke: $color-accent;
       }
     }
   }
