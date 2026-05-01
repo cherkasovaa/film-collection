@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 
 export interface Film {
   id: number;
@@ -162,6 +162,8 @@ export class Films {
       isFavorite: false,
     },
   ]);
+
+  favoriteFilms = computed(() => this.films().filter((film) => film.isFavorite));
 
   getFilmById(id: number | undefined): Film | undefined {
     return this.films().find((film) => film.id === id);

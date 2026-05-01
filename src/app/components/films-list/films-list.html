@@ -1,6 +1,15 @@
 <section class="films-section">
   <div class="container">
-    <app-search [searchText]="searchText()" (searchTextChange)="updateSearchText($event)"></app-search>
+    <div class="top-bar">
+      <app-search
+        [searchText]="searchText()"
+        (searchTextChange)="updateSearchText($event)"
+      ></app-search>
+
+      <button class="button" (click)="toggleShowFavorites()">
+        {{ showFavorites() ? `Hide Favorite Films` : `Show Favorite Films` }}
+      </button>
+    </div>
 
     <div class="film-list">
       @for (film of filteredFilms(); track film.id) {

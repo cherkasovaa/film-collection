@@ -14,17 +14,20 @@ export class FilmsList {
   readonly filmsService = inject(Films);
 
   searchText = signal('');
+  showFavorites = signal(false);
 
   filteredFilms = computed(() => {
+    const films = this.showFavorites()
+      ? this.filmsService.favoriteFilms()
+      : this.filmsService.films();
+
     const searchText = this.searchText().toLocaleLowerCase();
 
     if (!searchText) {
-      return this.filmsService.films();
+      return films;
     }
 
-    return this.filmsService
-      .films()
-      .filter((film) => film.title.toLocaleLowerCase().includes(searchText));
+    return films.filter((film) => film.title.toLocaleLowerCase().includes(searchText));
   });
 
   updateSearchText(newText: string): void {
@@ -33,5 +36,9 @@ export class FilmsList {
 
   onFavoriteToggled(filmId: number): void {
     this.filmsService.toggleFavorite(filmId);
+  }
+
+  toggleShowFavorites(): void {
+    this.showFavorites.update((show) => !show);
   }
 }
