@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.about-page {
+  padding-block: 20px;
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  &__created-by {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 15px;
+  }
+
+  &__description-paragraph {
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+}

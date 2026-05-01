@@ -1,0 +1,12 @@
+<div class="search-form">
+  <input
+    type="text"
+    class="search-form__input"
+    id="search-text"
+    aria-describedby="search-text"
+    placeholder="Enter text to search"
+    [ngModel]="searchText()"
+    (ngModelChange)="onSearchTextChange($event)"
+    appAutofocus
+  />
+</div>

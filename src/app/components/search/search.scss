@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.search-form {
+  display: inline-block;
+  padding-block: 15px;
+  margin-right: 20px;
+  max-width: 400px;
+  width: 100%;
+
+  &__input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid $color-primary;
+    border-radius: $border-radius-lg;
+  }
+}

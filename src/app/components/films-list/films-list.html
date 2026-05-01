@@ -1,0 +1,22 @@
+<section class="films-section">
+  <div class="container">
+    <div class="top-bar">
+      <app-search
+        [searchText]="searchText()"
+        (searchTextChange)="updateSearchText($event)"
+      ></app-search>
+
+      <button class="button" (click)="toggleShowFavorites()">
+        {{ showFavorites() ? `Hide Favorite Films` : `Show Favorite Films` }}
+      </button>
+    </div>
+
+    <div class="film-list">
+      @for (film of filteredFilms(); track film.id) {
+        <app-film-card [film]="film" (favoriteToggled)="onFavoriteToggled($event)"></app-film-card>
+      } @empty {
+        <p>Nothing found</p>
+      }
+    </div>
+  </div>
+</section>

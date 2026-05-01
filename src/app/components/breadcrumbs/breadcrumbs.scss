@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.breadcrumbs {
+  font-size: 0.8em;
+  padding-block: 20px;
+
+  &__list {
+    list-style: none;
+    display: inline-block;
+  }
+
+  &__item {
+    max-width: 100%;
+    display: inline-block;
+    font-style: italic;
+  }
+
+  &__link {
+    color: $color-accent;
+    font-weight: 500;
+
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &:not(&--clickable) {
+      color: $color-secondary;
+      font-weight: 700;
+      cursor: default;
+    }
+  }
+
+  &__separator {
+    padding-inline: 8px;
+    color: color.adjust($color-secondary, $lightness: -20%);
+  }
+}
