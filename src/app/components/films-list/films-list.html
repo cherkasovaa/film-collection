@@ -1,7 +1,9 @@
 <section class="films-section">
   <div class="container">
+    <app-search [searchText]="searchText()" (searchTextChange)="updateSearchText($event)"></app-search>
+
     <div class="film-list">
-      @for (film of filmsService.films(); track film.id) {
+      @for (film of filteredFilms(); track film.id) {
         <app-film-card [film]="film"></app-film-card>
       } @empty {
         <p>Nothing found</p>

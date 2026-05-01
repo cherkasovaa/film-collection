@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.search-form {
+  padding-block: 15px;
+
+  &__input {
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid $color-primary;
+    border-radius: 32px;
+  }
+}
