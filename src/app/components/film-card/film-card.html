@@ -1,4 +1,11 @@
 <div class="film-card">
+  <button class="film-card__favorite" (click)="toggleFavorite($event)">
+    <svg
+      lucideHeart
+      class="film-card__favorite-icon"
+      [class.film-card__favorite-icon--is-favorite]="film()?.isFavorite"
+    ></svg>
+  </button>
   <a [routerLink]="['/films', film()?.id]" class="film-card__link">
     <div class="film-card__rating">{{ film()?.rating }}</div>
 

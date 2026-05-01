@@ -166,4 +166,10 @@ export class Films {
   getFilmById(id: number | undefined): Film | undefined {
     return this.films().find((film) => film.id === id);
   }
+
+  toggleFavorite(id: number): void {
+    this.films.update((film) =>
+      film.map((f) => (f.id === id ? { ...f, isFavorite: !f.isFavorite } : f)),
+    );
+  }
 }

@@ -30,4 +30,8 @@ export class FilmsList {
   updateSearchText(newText: string): void {
     this.searchText.set(newText);
   }
+
+  onFavoriteToggled(filmId: number): void {
+    this.filmsService.toggleFavorite(filmId);
+  }
 }

@@ -4,7 +4,7 @@
 
     <div class="film-list">
       @for (film of filteredFilms(); track film.id) {
-        <app-film-card [film]="film"></app-film-card>
+        <app-film-card [film]="film" (favoriteToggled)="onFavoriteToggled($event)"></app-film-card>
       } @empty {
         <p>Nothing found</p>
       }

@@ -24,6 +24,26 @@
     border-radius: 4px;
   }
 
+  &__favorite {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+      fill: transparent;
+      stroke: $color-text-dark;
+
+      &--is-favorite {
+        fill: $color-secondary;
+        stroke: $color-secondary;
+      }
+    }
+  }
+
   &__poster {
     width: 100%;
     height: 344px;
