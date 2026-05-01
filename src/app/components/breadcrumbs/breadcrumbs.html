@@ -1,0 +1,23 @@
+<div class="container">
+  <nav class="breadcrumbs">
+    <ul class="breadcrumbs__list">
+      @for (breadcrumb of breadcrumbsService.breadcrumbs(); track breadcrumb.label) {
+        <li class="breadcrumbs__item">
+          @if (!$first) {
+            <span class="breadcrumbs__separator">/</span>
+          }
+
+          @if (breadcrumb.path) {
+            <a
+              [routerLink]="breadcrumb.path"
+              class="breadcrumbs__link breadcrumbs__link--clickable"
+              >{{ breadcrumb.label }}</a
+            >
+          } @else {
+            <span class="breadcrumbs__link">{{ breadcrumb.label }}</span>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+</div>
