@@ -1,6 +1,7 @@
-import { Component, computed, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, computed, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DurationPipe } from '../../pipes/duration-pipe';
+import { BreadcrumbsService } from '../../services/breadcrumbs/breadcrumbs-service';
 import { Films } from '../../services/films/films';
 
 @Component({
@@ -10,12 +11,26 @@ import { Films } from '../../services/films/films';
   styleUrl: './film-page.scss',
 })
 export class FilmPage {
+  private breadcrumbsService = inject(BreadcrumbsService);
+  private activatedRoute = inject(ActivatedRoute);
+
   readonly filmService = inject(Films);
-  id = input<string>();
+  id: number | undefined;
+  film = computed(() => this.filmService.getFilmById(this.id));
 
-  film = computed(() => {
-    const filmId = Number(this.id());
+  constructor() {
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = Number(params['id']);
 
-    return this.filmService.films().find((film) => film.id === filmId);
-  });
+      this.breadcrumbsService.setBreadcrumbs([
+        {
+          label: 'Home',
+          path: '/',
+        },
+        {
+          label: this.film()?.title || 'Film Not Found',
+        },
+      ]);
+    });
+  }
 }

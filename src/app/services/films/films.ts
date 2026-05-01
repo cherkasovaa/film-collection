@@ -162,4 +162,8 @@ export class Films {
       isFavorite: false,
     },
   ]);
+
+  getFilmById(id: number | undefined): Film | undefined {
+    return this.films().find((film) => film.id === id);
+  }
 }

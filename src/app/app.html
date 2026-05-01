@@ -1,9 +1,11 @@
 <div class="root">
   <app-header [companyName]="companyName()"></app-header>
-  
+
   <main class="main">
+    <app-breadcrumbs></app-breadcrumbs>
+
     <router-outlet />
   </main>
-  
+
   <app-footer [companyName]="companyName()"></app-footer>
 </div>
